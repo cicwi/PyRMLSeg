@@ -1,0 +1,553 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rmlseg package &mdash; PyRMLSeg  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
+    <link rel="prev" title="rmlseg" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PyRMLSeg
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">PyRMLSeg</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">rmlseg</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">rmlseg package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-rmlseg.rmlseg">rmlseg.rmlseg module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-rmlseg.tomo">rmlseg.tomo module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-rmlseg.util">rmlseg.util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-rmlseg">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyRMLSeg</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">rmlseg</a> &raquo;</li>
+        
+      <li>rmlseg package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/rmlseg.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rmlseg-package">
+<h1>rmlseg package<a class="headerlink" href="#rmlseg-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-rmlseg.rmlseg">
+<span id="rmlseg-rmlseg-module"></span><h2>rmlseg.rmlseg module<a class="headerlink" href="#module-rmlseg.rmlseg" title="Permalink to this headline">¶</a></h2>
+<p>Main module, where all the main functions can be found.</p>
+<p>&#64;author: Henri DER SARKISSIAN, Nicola VIGANÒ</p>
+<dl class="function">
+<dt id="rmlseg.rmlseg.denoise">
+<code class="sig-prename descclassname">rmlseg.rmlseg.</code><code class="sig-name descname">denoise</code><span class="sig-paren">(</span><em class="sig-param">img</em>, <em class="sig-param">iterations=50</em>, <em class="sig-param">lambda_tv=0.01</em>, <em class="sig-param">lambda_smooth=0.01</em>, <em class="sig-param">img_max=255.0</em>, <em class="sig-param">data_type=&lt;class 'numpy.float32'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/rmlseg.html#denoise"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.rmlseg.denoise" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function denoises the input image, based on the given TV and
+smoothnes constraint weights.</p>
+<p>It returns a denoised image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> – The image (np.array_like)</p></li>
+<li><p><strong>iterations</strong> – Number of iterations (int)</p></li>
+<li><p><strong>lambda_tv</strong> – Weight of the TV regularization (float, default: 1e-2)</p></li>
+<li><p><strong>lambda_smooth</strong> – Weight of the smoothing regularization (float, default: 1e-2)</p></li>
+<li><p><strong>img_max</strong> – renormalization value (float, default: 255.0)</p></li>
+<li><p><strong>data_type</strong> – Expected data type (np.dtype, default: np.float32)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a denoised image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rmlseg.rmlseg.estimate_rhos">
+<code class="sig-prename descclassname">rmlseg.rmlseg.</code><code class="sig-name descname">estimate_rhos</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">projs</em>, <em class="sig-param">img</em>, <em class="sig-param">rhos0=None</em>, <em class="sig-param">iterations=100</em>, <em class="sig-param">dataterm_norm_p=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/rmlseg.html#estimate_rhos"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.rmlseg.estimate_rhos" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function estimates the levelset values from the current
+segmentation and the available projections.</p>
+<p>It returns the etimated rhos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> – Projector from tomo module</p></li>
+<li><p><strong>projs</strong> – The object projections (np.array_like)</p></li>
+<li><p><strong>img</strong> – The segmented image (np.array_like)</p></li>
+<li><p><strong>rhos0</strong> – Initial estimation of the rhos (np.array_like, default: None)</p></li>
+<li><p><strong>iterations</strong> – Number of iterations (int)</p></li>
+<li><p><strong>dataterm_norm_p</strong> – l_p norm of the data term (int, default: 1)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>estimated rhos</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rmlseg.rmlseg.refine_rre">
+<code class="sig-prename descclassname">rmlseg.rmlseg.</code><code class="sig-name descname">refine_rre</code><span class="sig-paren">(</span><em class="sig-param">img</em>, <em class="sig-param">rhos</em>, <em class="sig-param">local_rre</em>, <em class="sig-param">iterations=50</em>, <em class="sig-param">lambda_tv=1.0</em>, <em class="sig-param">weight_norm_p=1</em>, <em class="sig-param">dataterm_norm_p=1</em>, <em class="sig-param">data_type=&lt;class 'numpy.float32'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/rmlseg.html#refine_rre"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.rmlseg.refine_rre" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function computes the refinement of the segmented image, based on
+the given locally reconstructed residual.</p>
+<p>It returns the refined image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> – The image (np.array_like)</p></li>
+<li><p><strong>rhos</strong> – Expected levels (np.array_like)</p></li>
+<li><p><strong>local_rre</strong> – Locally reconstructed residual error (np.array_like)</p></li>
+<li><p><strong>iterations</strong> – Number of iterations (int)</p></li>
+<li><p><strong>lambda_tv</strong> – Weight of the TV regularization (float, default: 1.0)</p></li>
+<li><p><strong>weight_norm_p</strong> – l_p norm of the weights (int, default: 1)</p></li>
+<li><p><strong>dataterm_norm_p</strong> – l_p norm of the data term (int, default: 1)</p></li>
+<li><p><strong>data_type</strong> – Expected data type (np.dtype, default: np.float32)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a refined regularized image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rmlseg.rmlseg.regularize_levelsets">
+<code class="sig-prename descclassname">rmlseg.rmlseg.</code><code class="sig-name descname">regularize_levelsets</code><span class="sig-paren">(</span><em class="sig-param">img</em>, <em class="sig-param">rhos</em>, <em class="sig-param">iterations=50</em>, <em class="sig-param">lambda_tv=0.1</em>, <em class="sig-param">lambda_smooth=None</em>, <em class="sig-param">weight_norm_p=2</em>, <em class="sig-param">dataterm_norm_p=1</em>, <em class="sig-param">lower_limit=None</em>, <em class="sig-param">upper_limit=None</em>, <em class="sig-param">data_type=&lt;class 'numpy.float32'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/rmlseg.html#regularize_levelsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.rmlseg.regularize_levelsets" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function computes the regularization of the input image, based on
+the given expected level values and regularization weights.</p>
+<p>It returns the regularized image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> – The image (np.array_like)</p></li>
+<li><p><strong>rhos</strong> – Expected levels (np.array_like)</p></li>
+<li><p><strong>iterations</strong> – Number of iterations (int)</p></li>
+<li><p><strong>lambda_tv</strong> – Weight of the TV regularization (float, default: 1e-1)</p></li>
+<li><p><strong>lambda_smooth</strong> – Weight of the smoothing regularization (float, default: None)</p></li>
+<li><p><strong>weight_norm_p</strong> – l_p norm of the weights (int, default: 2)</p></li>
+<li><p><strong>dataterm_norm_p</strong> – l_p norm of the data term (int, default: 1)</p></li>
+<li><p><strong>lower_limit</strong> – Lower limit of the image, used for clipping (float, default: None)</p></li>
+<li><p><strong>upper_limit</strong> – Upper limit of the image, used for clipping (float, default: None)</p></li>
+<li><p><strong>data_type</strong> – Expected data type (np.dtype, default: np.float32)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a regularized image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rmlseg.rmlseg.segment_levelset">
+<code class="sig-prename descclassname">rmlseg.rmlseg.</code><code class="sig-name descname">segment_levelset</code><span class="sig-paren">(</span><em class="sig-param">img</em>, <em class="sig-param">rhos</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwds</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/rmlseg.html#segment_levelset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.rmlseg.segment_levelset" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function computes the simple segmentation of the input image, based
+on the given expected level values and regularization weights.</p>
+<p>It returns the segmented image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> – The image (np.array_like)</p></li>
+<li><p><strong>rhos</strong> – Expected levels (np.array_like)</p></li>
+<li><p><strong>iterations</strong> – Number of iterations (int)</p></li>
+<li><p><strong>lambda_tv</strong> – Weight of the TV regularization (float, default: 1e-2)</p></li>
+<li><p><strong>lambda_smooth</strong> – Weight of the smoothing regularization (float, default: None)</p></li>
+<li><p><strong>weight_norm_p</strong> – l_p norm of the weights (int, default: 2)</p></li>
+<li><p><strong>dataterm_norm_p</strong> – l_p norm of the data term (int, default: 1)</p></li>
+<li><p><strong>lower_limit</strong> – Lower limit of the image, used for clipping (float, default: None)</p></li>
+<li><p><strong>upper_limit</strong> – Upper limit of the image, used for clipping (float, default: None)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a segmented image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rmlseg.rmlseg.segment_simple">
+<code class="sig-prename descclassname">rmlseg.rmlseg.</code><code class="sig-name descname">segment_simple</code><span class="sig-paren">(</span><em class="sig-param">img</em>, <em class="sig-param">rhos</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/rmlseg.html#segment_simple"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.rmlseg.segment_simple" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function computes the simple segmentation of the input image, based
+on the given expected level values.</p>
+<p>It returns the regularized image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>img</strong> – The image (np.array_like)</p></li>
+<li><p><strong>rhos</strong> – Expected levels (np.array_like)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The segmented image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-rmlseg.tomo">
+<span id="rmlseg-tomo-module"></span><h2>rmlseg.tomo module<a class="headerlink" href="#module-rmlseg.tomo" title="Permalink to this headline">¶</a></h2>
+<p>Basic tomography operations, including a projector class.</p>
+<p>&#64;author: Nicola VIGANÒ</p>
+<dl class="class">
+<dt id="rmlseg.tomo.Projector2D">
+<em class="property">class </em><code class="sig-prename descclassname">rmlseg.tomo.</code><code class="sig-name descname">Projector2D</code><span class="sig-paren">(</span><em class="sig-param">vol_shape</em>, <em class="sig-param">angles</em>, <em class="sig-param">beam_shape='parallel'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/tomo.html#Projector2D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.tomo.Projector2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="rmlseg.tomo.Projector2D.bp">
+<code class="sig-name descname">bp</code><span class="sig-paren">(</span><em class="sig-param">projections</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/tomo.html#Projector2D.bp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.tomo.Projector2D.bp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rmlseg.tomo.Projector2D.cgls">
+<code class="sig-name descname">cgls</code><span class="sig-paren">(</span><em class="sig-param">projections</em>, <em class="sig-param">iterations=50</em>, <em class="sig-param">opts={}</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/tomo.html#Projector2D.cgls"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.tomo.Projector2D.cgls" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rmlseg.tomo.Projector2D.dispose_projector">
+<code class="sig-name descname">dispose_projector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/tomo.html#Projector2D.dispose_projector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.tomo.Projector2D.dispose_projector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rmlseg.tomo.Projector2D.fbp">
+<code class="sig-name descname">fbp</code><span class="sig-paren">(</span><em class="sig-param">projections</em>, <em class="sig-param">iterations=50</em>, <em class="sig-param">opts={}</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/tomo.html#Projector2D.fbp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.tomo.Projector2D.fbp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rmlseg.tomo.Projector2D.fp">
+<code class="sig-name descname">fp</code><span class="sig-paren">(</span><em class="sig-param">volume</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/tomo.html#Projector2D.fp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.tomo.Projector2D.fp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rmlseg.tomo.Projector2D.get_matrix">
+<code class="sig-name descname">get_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/tomo.html#Projector2D.get_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.tomo.Projector2D.get_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rmlseg.tomo.Projector2D.initialize_projector">
+<code class="sig-name descname">initialize_projector</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/tomo.html#Projector2D.initialize_projector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.tomo.Projector2D.initialize_projector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rmlseg.tomo.Projector2D.sirt">
+<code class="sig-name descname">sirt</code><span class="sig-paren">(</span><em class="sig-param">projections</em>, <em class="sig-param">iterations=50</em>, <em class="sig-param">opts={}</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/tomo.html#Projector2D.sirt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.tomo.Projector2D.sirt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-rmlseg.util">
+<span id="rmlseg-util-module"></span><h2>rmlseg.util module<a class="headerlink" href="#module-rmlseg.util" title="Permalink to this headline">¶</a></h2>
+<p>Utility functions for the use of the package functionality.</p>
+<p>&#64;author: Nicola VIGANÒ</p>
+<dl class="function">
+<dt id="rmlseg.util.estimate_local_rre">
+<code class="sig-prename descclassname">rmlseg.util.</code><code class="sig-name descname">estimate_local_rre</code><span class="sig-paren">(</span><em class="sig-param">seg_vol</em>, <em class="sig-param">rhos</em>, <em class="sig-param">projs</em>, <em class="sig-param">angles</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/util.html#estimate_local_rre"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.util.estimate_local_rre" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function estimates the local Reconstructed Residual Error (RRE) for
+the given segmentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seg_vol</strong> – The segmentation (np.array_like)</p></li>
+<li><p><strong>rhos</strong> – The segmentation target levels (np.array_like)</p></li>
+<li><p><strong>projs</strong> – The projection data (np.array_like)</p></li>
+<li><p><strong>angles</strong> – Corresponding angles of the projections (np.array_like)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The corresponding RRE</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rmlseg.util.reconstruct_simple_2D">
+<code class="sig-prename descclassname">rmlseg.util.</code><code class="sig-name descname">reconstruct_simple_2D</code><span class="sig-paren">(</span><em class="sig-param">rec_vol_shape</em>, <em class="sig-param">projs</em>, <em class="sig-param">angles</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/util.html#reconstruct_simple_2D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.util.reconstruct_simple_2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function computes a simple FBP reconstruction of the projections
+from the given projection data and corresponding angles, for the given
+recontruction shape.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rec_vol_shape</strong> – The output reconstruction shape (np.array_like)</p></li>
+<li><p><strong>projs</strong> – The projection data (np.array_like)</p></li>
+<li><p><strong>angles</strong> – Corresponding angles of the projections (np.array_like)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The reconstructed image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rmlseg.util.refine_rre">
+<code class="sig-prename descclassname">rmlseg.util.</code><code class="sig-name descname">refine_rre</code><span class="sig-paren">(</span><em class="sig-param">seg_vol</em>, <em class="sig-param">rhos</em>, <em class="sig-param">rre</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/util.html#refine_rre"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.util.refine_rre" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function refines the segmentation using the RRE.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seg_vol</strong> – The segmentation (np.array_like)</p></li>
+<li><p><strong>rhos</strong> – The segmentation target levels (np.array_like)</p></li>
+<li><p><strong>rre</strong> – The pixel-wise RRE (np.array_like)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The segmented image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rmlseg.util.segment_denoise">
+<code class="sig-prename descclassname">rmlseg.util.</code><code class="sig-name descname">segment_denoise</code><span class="sig-paren">(</span><em class="sig-param">rec_vol</em>, <em class="sig-param">rhos</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/util.html#segment_denoise"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.util.segment_denoise" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function computes the segmentation of the denoised image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rec_vol</strong> – The reconstruction (np.array_like)</p></li>
+<li><p><strong>rhos</strong> – The segmentation target levels (np.array_like)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The segmented image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rmlseg.util.segment_levelset">
+<code class="sig-prename descclassname">rmlseg.util.</code><code class="sig-name descname">segment_levelset</code><span class="sig-paren">(</span><em class="sig-param">rec_vol</em>, <em class="sig-param">rhos</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmlseg/util.html#segment_levelset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmlseg.util.segment_levelset" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function computes the segmentation of the relaxed levelset based
+regularization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rec_vol</strong> – The reconstruction (np.array_like)</p></li>
+<li><p><strong>rhos</strong> – The segmentation target levels (np.array_like)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The segmented image</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>np.array_like</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-rmlseg">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-rmlseg" title="Permalink to this headline">¶</a></h2>
+<p>Top-level package for PyRMLSeg.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="rmlseg" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Author
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
