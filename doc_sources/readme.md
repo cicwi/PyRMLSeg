@@ -19,7 +19,7 @@ Informaticae, vol. 163, pp. 1–20, 2018.
 
 Further information:
 * Free software: MIT License
-* Documentation: [https://cicwi.github.io/rmlseg](https://cicwi.github.io/rmlseg)
+* Documentation: [https://cicwi.github.io/PyRMLSeg](https://cicwi.github.io/PyRMLSeg)
 
 <!--
 ## Readiness
