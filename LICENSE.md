@@ -1,9 +1,6 @@
 MIT License
 
-Relaxed multi-levelset segmentation package, with tomographically consistent
-refinement. 
-Copyright (c) 2019 Henri DER SARKISSIAN and Nicola VIGANÒ, Computational
-Imaging, CWI
+Copyright (c) 2019 Henri DER SARKISSIAN and Nicola VIGANÒ, Computational Imaging, CWI
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
