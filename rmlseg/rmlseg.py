@@ -135,11 +135,12 @@ def regularize_levelsets(
     sigma_rhos = 1 / (W_rhos + _close_to_0(W_rhos))
     sigma1_rhos = 1 / (1 + sigma_rhos)
 
-    x = np.zeros_like(img)
-    x[:] = rhos[np.argmax(W_rhos, axis=0)]
+    x = img.copy()
+    # x = np.zeros_like(img)
+    # x[:] = rhos[np.argmax(W_rhos, axis=0)]
     xe = x
 
-    tau = np.sum(W_rhos + (W_rhos == 0), axis=0)
+    tau = np.sum(W_rhos + _close_to_0(W_rhos), axis=0)
 
     if lambda_tv is not None:
         sigma_tv = 0.5
@@ -159,7 +160,7 @@ def regularize_levelsets(
 
     for ii in range(iterations):
 
-        q_rhos += rhos_exp - xe
+        q_rhos -= xe - rhos_exp
         if dataterm_norm_p == 1:
             q_rhos /= np.fmax(1, np.abs(q_rhos))
         elif dataterm_norm_p == 12:
@@ -173,20 +174,18 @@ def regularize_levelsets(
             qtv += _gradientN(xe) * sigma_tv
             qtv /= np.fmax(1, np.sqrt(np.sum(qtv ** 2, axis=0)))
 
-            x_upd += lambda_tv * _divergenceN(qtv)
+            x_upd -= lambda_tv * _divergenceN(qtv)
 
         if lambda_smooth is not None:
             ql += _laplacianN(xe) * sigma_smooth
             ql /= np.fmax(1, np.abs(ql))
 
-            x_upd -= lambda_smooth * _laplacianN(ql)
+            x_upd += lambda_smooth * _laplacianN(ql)
 
-        xn = x + tau * x_upd
+        xn = x - tau * x_upd
 
-        if lower_limit is not None:
-            xn = np.fmax(xn, lower_limit)
-        if upper_limit is not None:
-            xn = np.fmin(xn, upper_limit)
+        if lower_limit or upper_limit:
+            xn = np.clip(xn, lower_limit, upper_limit)
 
         xe = xn + (xn - x)
         x = xn
