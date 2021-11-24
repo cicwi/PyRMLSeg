@@ -8,9 +8,12 @@ Main module, where all the main functions can be found.
 
 import numpy as np
 
+from tqdm import tqdm
+
 
 def _close_to_0(x, tol=np.finfo(np.float32).eps):
     return np.abs(x) < tol
+
 
 def _gradientN(x):
     num_dims = len(x.shape)
@@ -158,7 +161,7 @@ def regularize_levelsets(
 
     q_rhos = np.zeros(np.concatenate(([rhos.size], img.shape)), dtype=data_type)
 
-    for ii in range(iterations):
+    for ii in tqdm(range(iterations)):
 
         q_rhos -= xe - rhos_exp
         if dataterm_norm_p == 1:
@@ -231,7 +234,7 @@ def refine_rre(
     qa = np.zeros_like(img, dtype=data_type)
     qtv = np.zeros(np.concatenate(([len(img.shape)], img.shape)), dtype=data_type)
 
-    for ii in range(iterations):
+    for ii in tqdm(range(iterations)):
         qa += img - xe
         if (dataterm_norm_p == 1):
             qa /= np.fmax(1, np.abs(qa))
@@ -282,7 +285,7 @@ def estimate_rhos(p, projs, img, rhos0=None, iterations=100, dataterm_norm_p=1):
 
     rhos_e_shape = np.concatenate((rhos_e.shape, np.ones((len(img.shape)), dtype=np.intp)))
 
-    for ii in range(iterations):
+    for ii in tqdm(range(iterations)):
         res = projs - np.sum(p_x * np.reshape(rhos_e, rhos_e_shape), axis=0)
         q += res * sigma
         if dataterm_norm_p == 1:

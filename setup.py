@@ -16,10 +16,11 @@ with open(os.path.join('rmlseg','VERSION')) as version_file:
     version = version_file.read().strip()
 
 requirements = [
-     'astra-toolbox',
-     'numpy',
-     'matplotlib',
-     'scipy',
+    'astra-toolbox',
+    'numpy',
+    'matplotlib',
+    'scipy',
+    'tqdm'
 ]
 
 setup_requirements = [ ]
