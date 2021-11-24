@@ -12,8 +12,7 @@ import astra
 
 
 class Projector2D(object):
-
-    def __init__(self, vol_shape, angles, beam_shape='parallel'):
+    def __init__(self, vol_shape, angles, beam_shape="parallel"):
         if len(vol_shape) > 2:
             raise ValueError("Only 2D volumes")
 
@@ -24,7 +23,7 @@ class Projector2D(object):
         self.proj_geom = astra.create_proj_geom(beam_shape, 1, np.max(vol_shape), angles)
 
     def initialize_projector(self):
-        self.proj_id = astra.create_projector('linear', self.proj_geom, self.vol_geom)
+        self.proj_id = astra.create_projector("linear", self.proj_geom, self.vol_geom)
         self.W = astra.OpTomo(self.proj_id)
 
     def dispose_projector(self):
@@ -46,14 +45,13 @@ class Projector2D(object):
         return self.W.BP(projections)
 
     def fbp(self, projections, iterations=50, opts={}):
-        return self.W.reconstruct('FBP_CUDA', projections, iterations=iterations, extraOptions=opts)
+        return self.W.reconstruct("FBP_CUDA", projections, iterations=iterations, extraOptions=opts)
 
     def sirt(self, projections, iterations=50, opts={}):
-        return self.W.reconstruct('SIRT_CUDA', projections, iterations=iterations, extraOptions=opts)
+        return self.W.reconstruct("SIRT_CUDA", projections, iterations=iterations, extraOptions=opts)
 
     def cgls(self, projections, iterations=50, opts={}):
-        return self.W.reconstruct('CGLS_CUDA', projections, iterations=iterations, extraOptions=opts)
+        return self.W.reconstruct("CGLS_CUDA", projections, iterations=iterations, extraOptions=opts)
 
     def get_matrix(self):
         return sp.sparse.csc_matrix(astra.matrix.get(astra.projector.matrix(self.proj_id)))
-

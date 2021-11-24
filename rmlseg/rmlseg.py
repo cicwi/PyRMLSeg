@@ -21,7 +21,7 @@ def _gradientN(x):
     for ii in range(num_dims):
         pad_widths = [(0, 0)] * num_dims
         pad_widths[ii] = (0, 1)
-        x_tmp = np.pad(x, pad_widths, mode='constant')
+        x_tmp = np.pad(x, pad_widths, mode="constant")
         d[ii, ...] = np.diff(x_tmp, n=1, axis=ii)
     return d
 
@@ -32,7 +32,7 @@ def _divergenceN(x):
     for ii in range(num_dims):
         pad_widths = [(0, 0)] * num_dims
         pad_widths[ii] = (1, 0)
-        x_tmp = np.pad(x[ii, ...], pad_widths, mode='constant')
+        x_tmp = np.pad(x[ii, ...], pad_widths, mode="constant")
         d[ii, ...] = np.diff(x_tmp, n=1, axis=ii)
     return np.sum(d, axis=0)
 
@@ -43,14 +43,12 @@ def _laplacianN(x):
     for ii in range(num_dims):
         pad_widths = [(0, 0)] * num_dims
         pad_widths[ii] = (1, 1)
-        x_tmp = np.pad(x, pad_widths, mode='edge')
+        x_tmp = np.pad(x, pad_widths, mode="edge")
         d[ii, ...] = np.diff(x_tmp, n=2, axis=ii)
     return np.sum(d, axis=0)
 
 
-def denoise(
-        img, iterations=50, lambda_tv=1e-2, lambda_smooth=1e-2, img_max=255.0,
-        data_type = np.float32):
+def denoise(img, iterations=50, lambda_tv=1e-2, lambda_smooth=1e-2, img_max=255.0, data_type=np.float32):
     """This function denoises the input image, based on the given TV and
     smoothnes constraint weights.
 
@@ -102,9 +100,17 @@ def denoise(
 
 
 def regularize_levelsets(
-        img, rhos, iterations=50, lambda_tv=1e-1, lambda_smooth=None,
-        weight_norm_p=2, dataterm_norm_p=1, lower_limit=None, upper_limit=None,
-        data_type=np.float32):
+    img,
+    rhos,
+    iterations=50,
+    lambda_tv=1e-1,
+    lambda_smooth=None,
+    weight_norm_p=2,
+    dataterm_norm_p=1,
+    lower_limit=None,
+    upper_limit=None,
+    data_type=np.float32,
+):
     """This function computes the regularization of the input image, based on
     the given expected level values and regularization weights.
 
@@ -196,9 +202,7 @@ def regularize_levelsets(
     return x
 
 
-def refine_rre(
-        img, rhos, local_rre, iterations=50, lambda_tv=1.0, weight_norm_p=1,
-        dataterm_norm_p=1, data_type=np.float32):
+def refine_rre(img, rhos, local_rre, iterations=50, lambda_tv=1.0, weight_norm_p=1, dataterm_norm_p=1, data_type=np.float32):
     """This function computes the refinement of the segmented image, based on
     the given locally reconstructed residual.
 
@@ -236,15 +240,15 @@ def refine_rre(
 
     for ii in tqdm(range(iterations)):
         qa += img - xe
-        if (dataterm_norm_p == 1):
+        if dataterm_norm_p == 1:
             qa /= np.fmax(1, np.abs(qa))
-        elif (dataterm_norm_p == 2):
+        elif dataterm_norm_p == 2:
             qa *= sigma1
 
         qtv += _gradientN(xe) * sigma_tv
         qtv /= np.fmax(1, np.sqrt(np.sum(qtv ** 2, axis=0)))
 
-        xn = x + tau * (local_confidence * qa  + lambda_tv * _divergenceN(qtv))
+        xn = x + tau * (local_confidence * qa + lambda_tv * _divergenceN(qtv))
 
         xe = xn + (xn - x)
         x = xn
@@ -301,6 +305,7 @@ def estimate_rhos(p, projs, img, rhos0=None, iterations=100, dataterm_norm_p=1):
 
     return rhos
 
+
 def segment_simple(img, rhos):
     """This function computes the simple segmentation of the input image, based
     on the given expected level values.
@@ -320,9 +325,10 @@ def segment_simple(img, rhos):
 
     x = np.zeros_like(img, dtype=np.int)
     for ii, t in enumerate(thr):
-        x[img > t] = pos[ii+1]
+        x[img > t] = pos[ii + 1]
 
     return x
+
 
 def segment_levelset(img, rhos, *args, **kwds):
     """This function computes the simple segmentation of the input image, based
@@ -345,5 +351,3 @@ def segment_levelset(img, rhos, *args, **kwds):
     """
     img_ls = regularize_levelsets(img, rhos, *args, **kwds)
     return segment_simple(img_ls, rhos)
-
-
